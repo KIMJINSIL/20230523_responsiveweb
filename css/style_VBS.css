@@ -1,0 +1,467 @@
+/*초기화 코드*/
+* {margin: 0; padding: 0; box-sizing: border-box;
+    color:rgba(17, 17, 17, 0.6);
+    font-family: 'Noto Sans KR', sans-serif;}
+a {text-decoration: none;}
+li {list-style: none;}
+
+/*기본 모바일모드(768px미만)*/
+/*공통사항*/
+section {
+    /* border: 1px solid black; */
+    padding: 90px 70px;
+}
+section .wrapper {
+    max-width: 960px; margin: 0 auto;
+}
+section .section_title h4 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    background: linear-gradient(165deg,#4e3083 6%, #6b79b9 23%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+.image {
+    display: none;
+}
+/*PC모드(768px이상) - 공통사항*/
+@media screen and (min-width : 768px){
+    section {
+        padding: 170px 70px;
+        /* height: 100vh; */
+    }
+    #subject, #schedule {
+        height: auto;
+    }
+    .image {
+        display: block;
+    }
+}
+
+/*헤더 스타일*/
+header nav {
+    position: fixed;/*nav메뉴 고정*/
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(254, 254, 254, 0.9);
+    box-shadow: 0 0.5px 3px #ddd;
+}
+header nav a#toggle {
+    display: block; /*모바일모드 토글메뉴 보임*/
+    padding: 15px;
+    width: 65px;
+}
+header nav a#toggle img {
+    width: 100%;
+}
+header nav ul {
+    background-color: rgba(254, 254, 254, 0.3);
+    display: none;
+}
+header nav ul li {
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+}
+header nav ul a{
+    font-weight: 600;
+}
+/*PC모드(768px이상) - 토글메뉴*/
+@media screen and (min-width : 768px) {
+    header nav a#toggle {
+        display: none; /*PC모드 토글메뉴 숨김*/
+    }
+    header nav ul {
+        display: block !important;
+        text-align: center;
+        padding: 5px 0;
+    }
+    header nav ul li {
+        display: inline-block;
+        border-top: 0;
+        padding-right: 5%;
+    }
+}
+
+/*전체 컨텐츠 section이 담긴 #body_section 스타일*/
+#body_section {
+    /* background: linear-gradient(160deg,#fcfcfc 10%, #e4e8f7 10%, #fcfcfc 23%, #fcfcfc 30%, #ebf1dc 47.5%, #fcfcfc 47.5%, #fcfcfc 55%, #fdf1d7 65%, #fcfcfc 65%); */
+    background: linear-gradient(160deg,#fcfcfc 10%, #e4e8f7 10%, #fcfcfc 23%, #fcfcfc 30%);
+}
+
+/*개별 section 스타일*/
+/*#dongil_vbs: 메인타이틀*/
+section#dongil_vbs {
+    padding-top: 200px; /*nav메뉴 고정때문에 여백을 더 많이 줌*/
+    height: 100vh;
+    position: relative;
+    /* background-image: linear-gradient(130deg,#fcfcfc 23%, #e7e7e7 100%); */
+}
+#dongil_vbs #main_title h2 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 5.5em;
+    font-weight: normal;
+    line-height: 1em;
+    max-width: 390px;
+    background: linear-gradient(175deg,#241461 20%, #3c3e70 37%, #b07277 85%, #cd7f68 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+#dongil_vbs #main_title h2:nth-child(3) {
+    font-size: 3em;
+    margin: 15px 0 40px 0;
+}
+#dongil_vbs #main_title h3 {
+    font-size: 1.6em;
+    font-weight: 800;
+    margin-bottom: 50px;
+    color: #468253e3;
+}
+#dongil_vbs #main_title h4 {
+    font-size: 1.1em;
+    max-width: 320px;
+    color: #697278;
+    margin-top: 30px;
+}
+/*메인타이틀_이미지*/
+#dongil_vbs .image {
+    width: 18%;
+    min-width: 200px;
+    position: absolute;
+    bottom: 4%;
+    right: 8%;
+}
+#dongil_vbs .image img {
+    width: 100%;
+}
+/*PC모드(768px이상) - 메인타이틀*/
+@media screen and (min-width : 768px) {
+    #dongil_vbs #main_title h2 {
+        min-width: 650px;
+    }
+    #dongil_vbs #main_title h4 {
+        min-width: 550px;
+    }
+}
+/*모바일모드(768px미만) - 메인타이틀:풀스크린*/
+@media screen and (max-width : 767px) {
+    section#dongil_vbs {
+        height: 100vh;
+    }
+}
+
+/*#subject: 주제소개*/
+/* #subject {
+    background-image: linear-gradient(220deg,#ebebeb 23%, #eee 60%, #bdd2e2 100%);
+} */
+#subject .section_contents {
+    display: flex;
+    flex-wrap: wrap;
+}
+#subject article:nth-child(1) {
+    width: 100%;
+}
+#subject article:nth-child(1) p {
+    font-size: 1em;
+    line-height: 1.7em;
+    margin-bottom: 18px;
+    font-weight: 300;
+}
+#subject article:nth-child(1) p strong {
+    color: #6b79b9;
+    font-weight: 500;
+}
+#subject article:nth-child(2) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 56.25%;
+    margin: 60px 0;
+}
+#subject article:nth-child(2) iframe {
+    position: absolute;
+    top: 0; left: 0; 
+    width: 100%;
+    height: 100%;
+}
+#subject article:nth-child(3) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#subject .lesson {
+    border: 4px solid #ddd;
+    padding: 35px 30px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+#subject .lesson h5 {
+    font-size: 1.25em;
+    font-weight: 800;
+    background: linear-gradient(165deg,#4e3083 6%, #6b79b9 23%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+#subject .lesson h6 {
+    font-size: 1em;
+    margin: 20px 0 5px 0;
+    color: #6b79b9;
+}
+#subject .lesson p {
+    font-size: 1em;
+    font-weight: 500;
+    padding-left: 10px;
+}
+/*PC모드(768px이상) - 주제소개*/
+@media screen and (min-width : 768px) {
+    #subject article:nth-child(3) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #subject .lesson {
+        width: 32%;
+    }
+}
+
+/*#curriculum: 커리큘럼*/
+#curriculum .section_contents {
+    display: flex;
+    flex-direction: column;
+}
+#curriculum .section_contents article {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+#curriculum .section_contents .circle {
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    background: #848fbe;
+    line-height: 140px;
+    font-size: 1.35em;
+    font-weight: 600;
+    color: #fefefe;
+}
+#curriculum .section_contents .curri_text {
+    width: 70%;
+}
+#curriculum .section_contents .curri_text p {
+    margin-left: 25px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+#curriculum .section_contents .divider {
+    width: 100%;
+    display: flex;
+    margin: 10px 0;
+}
+#curriculum .section_contents .divider div:first-child {
+    height: 30px;
+    border-right: 5px solid #888;
+    width: 70px;
+}
+/*커리큘럼_이미지*/
+#curriculum .wrapper {
+    margin-bottom: 150px;
+}
+#curriculum {
+    position: relative;
+}
+#curriculum .image {
+    width: 13%;
+    min-width: 170px;
+    position: absolute;
+    bottom: 2.5%;
+    left: 9%;
+}
+#curriculum .image img {
+    width: 100%;
+}
+/*PC모드(768px이상) - 커리큘럼*/
+@media screen and (min-width : 768px){
+    #curriculum .section_contents {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #curriculum .section_contents article {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 23%;
+    }
+    #curriculum .section_contents .circle {
+        margin-bottom: 20px;
+    }
+    #curriculum .section_contents .curri_text p{
+        margin-left: 0;
+        padding: 20px;
+    }
+    #curriculum .section_contents .divider {
+        width: 2%;
+        flex-direction: column;
+        align-items: center;
+    }
+    #curriculum .section_contents .divider div:first-child {
+        width: 50%;
+        height: 70px;
+        border-bottom: 5px solid #888;
+        border-right: 0;
+    }
+}
+
+/*#schedule: 일정표*/
+#schedule #timetable {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#schedule #timetable div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 38%;
+    text-align: center;
+}
+#schedule #timetable div:first-child {
+    width: 22%;
+}
+#schedule #timetable div p {
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 10px;
+    border-bottom: 1px solid #888;
+}
+#schedule #timetable div p:first-child {
+    background-color: #848fbe;
+    padding: 15px 20px;
+    border-bottom: 0;
+    color: #fefefe;
+}
+/*일정표_이미지*/
+#schedule .wrapper {
+    margin-bottom: 150px;
+}
+#schedule {
+    position: relative;
+}
+#schedule .image {
+    width: 17%;
+    min-width: 200px;
+    position: absolute;
+    bottom: 4%;
+    right: 10%;
+}
+#schedule .image img {
+    width: 100%;
+}
+/*PC모드(768px이상) - 일정표*/
+@media screen and (min-width : 768px){
+    #schedule #timetable div p {
+        padding: 20px;
+    }
+}
+
+/*#pray_topic: 기도제목*/
+#pray_topic .section_contents article:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#pray_topic .section_contents .pray_for {
+    border: 1px solid #848fbe;
+    padding: 10px;
+    width: 85%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #6b79b9;
+    margin-bottom: 8px;
+}
+#pray_topic .section_contents .pray_text {
+    padding: 40px 50px 40px 70px;
+}
+#pray_topic .section_contents .pray_text li {
+    list-style: disc;
+    line-height: 2.5em;
+    font-size: 1.15em;
+}
+#pray_topic input {
+    display: none;
+}
+/*기도제목_이미지*/
+#pray_topic .wrapper {
+    margin-bottom: 150px;
+}
+#pray_topic {
+    position: relative;
+}
+#pray_topic .image {
+    width: 19%;
+    min-width: 200px;
+    position: absolute;
+    bottom: 2.5%;
+    left: 9%;
+}
+#pray_topic .image img {
+    width: 100%;
+}
+/*PC모드(768px이상) - 기도제목*/
+@media screen and (min-width : 768px){
+    #pray_topic .section_contents article:first-child {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #pray_topic .section_contents .pray_for {
+        padding: 20px;
+        width: 32%;
+    }
+}
+
+
+/*푸터*/
+footer {
+    /* background-color: rgba(17, 17, 17, 0.5); */
+    background-color: rgba(17, 17, 17, 0.6);
+    padding: 60px 35px;
+}
+footer .wrapper {
+    max-width: 960px; margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+footer div#footer_title a {
+    font-family: 'Black Han Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: #fefefe;
+    margin-bottom: 20px;
+}
+footer #info_wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+footer .info {
+    display: flex;
+}
+footer .info p:nth-child(1){
+    color: #fefefe;
+    font-weight: 700;
+}
+footer .info p:nth-child(2){
+    color: #fefefe;
+    font-weight: 300;
+    padding-left: 15px;
+}
